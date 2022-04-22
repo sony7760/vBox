@@ -7,6 +7,7 @@ pipeline {
     stage('test') {
       steps {
         sh 'echo "Hello, vBox"'
+        sh 'export PATH=$PATH:/usr/local/bin'
         sh 'echo $PATH'
       }
     }
