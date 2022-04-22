@@ -1,5 +1,10 @@
 pipeline {
   agent any
+  parameters {
+        string(name: 'environment', defaultValue: 'tfenv', description: 'Workspace/environment file to use for deployment')
+        booleanParam(name: 'destroy', description: 'Destroy your infrastructure?')
+        booleanParam(name: 'apply', description: 'This will apply your chnages!') 
+    }
   environment {
     TF_LOG = 'DEBUG'
     PATH = "/usr/local/bin:${env.PATH}"
@@ -26,8 +31,23 @@ pipeline {
       }
     }
     stage('apply') {
+      when {
+                expression {
+                    params.apply == true
+                }
+            }
       steps {
         sh "terraform apply vbox.out"
+      }
+    }
+    stage('destroy') {
+      when {
+                expression {
+                    params.destroy == true
+                }
+            }
+      steps {
+        sh "terraform destroy --auto-approve"
       }
     }
   } /* ## close for stages*/
