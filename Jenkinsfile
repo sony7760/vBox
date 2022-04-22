@@ -11,7 +11,7 @@ pipeline {
     }
     stage('init') {
       steps {
-        sh "terraform init -force-copy"
+        sh "/usr/local/bin/terraform init -force-copy"
       }
     }
     stage('validate') {
