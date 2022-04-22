@@ -3,7 +3,7 @@ Pipeline {
   stages {
     stage('test') {
       steps {
-        sh "echo "Hello, vBox""
+        sh 'echo "Hello, vBox"'
       }
     }
     stage('init') {
