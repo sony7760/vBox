@@ -8,7 +8,7 @@ pipeline {
     }
     stage('init') {
       steps {
-        sh "terrafom init -force-copy"
+        sh "terraform init -force-copy"
       }
     }
   } /* ## close for stages*/
