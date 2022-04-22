@@ -2,6 +2,7 @@ pipeline {
   agent any
   environment {
     TF_LOG = 'DEBUG'
+    PATH = "/usr/local/bin:${env.PATH}"
   }
   stages {
     stage('test') {
