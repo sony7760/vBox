@@ -7,6 +7,7 @@ pipeline {
     stage('test') {
       steps {
         sh 'echo "Hello, vBox"'
+        sh 'echo $PATH'
       }
     }
     stage('init') {
