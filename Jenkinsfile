@@ -2,12 +2,12 @@ pipeline {
   agent any
   environment {
     TF_LOG = 'DEBUG'
+    PATH = "/usr/local/bin:${env.PATH}"
   }
   stages {
     stage('test') {
       steps {
         sh 'echo "Hello, vBox"'
-        sh 'export PATH=$PATH:/usr/local/bin'
         sh 'echo $PATH'
       }
     }
