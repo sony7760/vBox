@@ -24,5 +24,10 @@ pipeline {
         sh "terraform plan -out vbox.out"
       }
     }
+    stage('apply') {
+      steps {
+        sh "terraform apply vbox.out"
+      }
+    }
   } /* ## close for stages*/
 }  /* ## close for Pipeline*/
