@@ -14,5 +14,15 @@ pipeline {
         sh "terraform init -force-copy"
       }
     }
+    stage('validate') {
+      steps {
+        sh "terraform validate"
+      }
+    }
+    stage('plan') {
+      steps {
+        sh "terraform plan -out vbox.out"
+      }
+    }
   } /* ## close for stages*/
 }  /* ## close for Pipeline*/
