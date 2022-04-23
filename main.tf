@@ -39,7 +39,7 @@ resource "virtualbox_vm" "node" {
 }
 
 output "Master-IPAddress-1" {
-  value = element(virtualbox_vm.master.*.network_adapter.0.ipv4_address)
+  value = element(virtualbox_vm.master.*.network_adapter.0.ipv4_address, 1)
 }
 
 output "Node-IPAddress-1" {
