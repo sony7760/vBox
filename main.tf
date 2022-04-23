@@ -43,9 +43,9 @@ output "Master-IPAddress-1" {
 }
 
 output "Node-IPAddress-1" {
-  value = element(virtualbox_vm.master.*.network_adapter.0.ipv4_address, 1)
+  value = element(virtualbox_vm.node.*.network_adapter.0.ipv4_address, 1)
 }
 
 output "Node-IPAddress-2" {
-  value = element(virtualbox_vm.master.*.network_adapter.0.ipv4_address, 2)
+  value = element(virtualbox_vm.node.*.network_adapter.0.ipv4_address, 2)
 }
