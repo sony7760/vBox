@@ -13,7 +13,7 @@ provider "virtualbox" {
 
 resource "virtualbox_vm" "master" {
   name      = "k8s-master"
-  image     = "https://app.vagrantup.com/ubuntu/boxes/bionic64/versions/20180903.0.0/providers/virtualbox.box"
+  image     = "ubuntu-22.04-live-server-amd64.ovf"
   cpus      = 1
   memory    = "4096 mib"
   #user_data = file("${path.module}/user_data")
