@@ -13,7 +13,7 @@ provider "virtualbox" {
 
 resource "virtualbox_vm" "master" {
   name      = "k8s-master"
-  image     = "ubuntu-22.04-live-server-amd64.ovf"
+  image     = "../AMI/isoImages/ubuntu-22.04-live-server-amd64.ovf"
   cpus      = 1
   memory    = "4096 mib"
   #user_data = file("${path.module}/user_data")
