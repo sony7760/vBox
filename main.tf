@@ -13,7 +13,7 @@ provider "virtualbox" {
 
 resource "virtualbox_vm" "master" {
   name      = "k8s-master"
-  image     = "../AMI/isoImages/ubuntu-22.04-live-server-amd64-disk001.vmdk"
+  image     = "AMI/vagrant-images/ubuntu-18.04.6.box"
   cpus      = 1
   memory    = "4096 mib"
   #user_data = file("${path.module}/user_data")
