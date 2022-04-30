@@ -19,9 +19,9 @@ resource "virtualbox_vm" "master" {
   memory    = "4096 mib"
   #user_data = file("${path.module}/user_data")
   
-  network_adapter {
-    type           = "nat"
-  }
+  #network_adapter {
+  #  type           = "nat"
+  #}
 
   network_adapter {
     type           = "hostonly"
@@ -37,9 +37,9 @@ resource "virtualbox_vm" "node" {
   memory    = "2048 mib"
   #user_data = file("${path.module}/user_data")
 
-  network_adapter {
-    type           = "nat"
-  }
+  #network_adapter {
+  #  type           = "nat"
+  #}
   
   network_adapter {
     type           = "hostonly"
