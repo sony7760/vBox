@@ -19,7 +19,7 @@ resource "virtualbox_vm" "master" {
   #user_data = file("${path.module}/user_data")
   
   network_adapter {
-    type           = "NAT"
+    type           = "nat"
   }
 
   network_adapter {
