@@ -33,7 +33,7 @@ resource "virtualbox_vm" "node" {
   name      = "k8s-node-${count.index + 1}"
   image     = "https://app.vagrantup.com/ubuntu/boxes/bionic64/versions/20180903.0.0/providers/virtualbox.box"
   cpus      = 1
-  memory    = "2048 mib"
+  memory    = "2048 MB"
   #user_data = file("${path.module}/user_data")
 
   network_adapter {
