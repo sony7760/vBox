@@ -15,8 +15,12 @@ resource "virtualbox_vm" "master" {
   name      = "k8s-master"
   image     = "../AMI/vagrant-images/ubuntu-18.04.6.box"
   cpus      = 1
-  memory    = "4096 mib"
+  memory    = "4096"
   #user_data = file("${path.module}/user_data")
+  
+  network_adapter {
+    type           = "NAT"
+  }
 
   network_adapter {
     type           = "hostonly"
