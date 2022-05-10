@@ -1,2 +1,2 @@
 apt-get update
-mkdir -p mango/orange/apple
+mkdir -p /mango/orange/apple
