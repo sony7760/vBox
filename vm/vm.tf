@@ -26,6 +26,12 @@ resource "virtualbox_vm" "master" {
     type           = "hostonly"
     host_interface = "vboxnet1"
   }
+  provisioner "remote-exec" {
+    inline = [
+      "touch /tmp/script.sh",
+      "chmod +x /tmp/script.sh",
+    ]
+  }
 }
 
 resource "virtualbox_vm" "node" {
