@@ -17,7 +17,6 @@ resource "virtualbox_vm" "master" {
   image     = "https://app.vagrantup.com/ubuntu/boxes/bionic64/versions/20180903.0.0/providers/virtualbox.box"
   cpus      = 1
   memory    = "4096 mib"
-  user_data = file("${path.module}/user_data")
   
   #network_adapter {
   #  type           = "nat"
@@ -35,7 +34,6 @@ resource "virtualbox_vm" "node" {
   image     = "https://app.vagrantup.com/ubuntu/boxes/bionic64/versions/20180903.0.0/providers/virtualbox.box"
   cpus      = 1
   memory    = "2048 mib"
-  user_data = file("${path.module}/user_data")
 
   #network_adapter {
   #  type           = "nat"
