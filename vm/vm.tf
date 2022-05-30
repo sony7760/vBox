@@ -21,7 +21,12 @@ resource "virtualbox_vm" "master" {
   #network_adapter {
   #  type           = "nat"
   #}
-
+  connection {
+    type = "ssh"
+    user = "vagrant"
+    password = "vagrant"
+    host = element(virtualbox_vm.master.*.network_adapter.0.ipv4_address, 1)
+  }
   network_adapter {
     type           = "hostonly"
     host_interface = "vboxnet1"
@@ -55,9 +60,9 @@ resource "virtualbox_vm" "node" {
   }
 }
 
-#output "Master-IPAddress-1" {
-#  value = element(virtualbox_vm.master.*.network_adapter.0.ipv4_address, 1)
-#}
+output "Master-IPAddress-1" {
+  value = element(virtualbox_vm.master.*.network_adapter.0.ipv4_address, 1)
+}
 
 #output "Node-IPAddress-1" {
 #  value = element(virtualbox_vm.node.*.network_adapter.0.ipv4_address, 1)
