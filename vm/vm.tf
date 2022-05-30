@@ -13,8 +13,8 @@ provider "virtualbox" {
 
 resource "virtualbox_vm" "master" {
   name      = "k8s-master"
-  #image     = "../AMI/vagrant-images/ubuntu-18.04.6.box"
-  image     = "https://app.vagrantup.com/ubuntu/boxes/bionic64/versions/20180903.0.0/providers/virtualbox.box"
+  image     = "../AMI/vagrant-images/package.box"
+  #image     = "https://app.vagrantup.com/ubuntu/boxes/bionic64/versions/20180903.0.0/providers/virtualbox.box"
   cpus      = 1
   memory    = "4096 mib"
   
